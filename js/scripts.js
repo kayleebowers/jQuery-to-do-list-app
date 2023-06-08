@@ -3,6 +3,7 @@
   let list = $("#list");
   let button = $("#button");
   let formInput = "";
+  let li = $("<li></li>");
 
   //add event listener to get input
   $("#input").change(function () {
@@ -14,25 +15,22 @@
     if (!formInput) {
       alert("You must write something!");
     } else {
-      let listItem = $("<li></li>").text(formInput).addClass("list-item");
+        let li = $("<li></li>");
+      let listItem = li.text(formInput).addClass("list-item");
       list.append(listItem);
-
-      //add crossOutButton to all li 
-      let crossOutButton = $("<crossOutButton></crossOutButton");
-      crossOutButton.append(document.createTextNode("X"));
-      listItem.append(crossOutButton);
     }
   });
 
-  let item = $(".list-item");
-
   function crossOut() {
-    item.toggleClass('strike');
+    li.toggleClass("strike");
   }
 
-  item.on("dblclick", function () { 
-    crossOut();
-  })
+  li.on("dblclick", crossOut());
+  
+  //add crossOutButton to all li 
+  let crossOutButton = $("<crossOutButton></crossOutButton");
+  crossOutButton.append(document.createTextNode("X"));
+  listItem.append(crossOutButton);
 
   $('#list').sortable();
 
