@@ -11,14 +11,19 @@
 
     //add list items function
     button.click(function () {
-        let listItem = $('<li></li>').text(formInput).addClass('list-item');
-        list.append(listItem);
+        if (formInput = '') {
+            alert("You must write something!");
+        } else {
+            let listItem = $('<li></li>').text(formInput).addClass('list-item');
+            list.append(listItem);
+        }
     })
 
     //create cross out button
-    let crossOutButton = $('button');
+    let crossOutButton = $('<crossOutButton></crossOutButton');
     crossOutButton.append(document.createTextNode('X'));
-    listItem.append(crossOutButton);
+    li.append(crossOutButton);
+
     //make delete buttons
     // $('li').append(document.createTextNode('X'););
 
