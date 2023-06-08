@@ -36,7 +36,7 @@ let toDoList = (function ($) {
   //delete li
 
   list.on("click", "crossoutbutton", function (event) {
-    $(this).addClass("delete");
+    $(this).closest("li").addClass("delete");
   });
 
   //cross out item
@@ -44,6 +44,8 @@ let toDoList = (function ($) {
   list.on("dblclick", "li", function (event) {
     $(this).toggleClass("strike");
   });
+
+  //make list sortable 
 
   $('#list').sortable();
 
