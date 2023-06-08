@@ -30,14 +30,16 @@ let toDoList = (function ($) {
     listItem.append(crossOutButton);
   } 
 
-
+  function deleteItem() {
+    $('crossOutButton').addClass('delete');
+  }
 
   function crossOut() {
     li.toggleClass("strike");
   }
 
   li.on("dblclick", crossOut());
-  
+
   $('#list').sortable();
 
   return {
