@@ -23,12 +23,6 @@ let toDoList = (function ($) {
     }
   });
 
-  function crossOut() {
-    li.toggleClass("strike");
-  }
-
-  li.on("dblclick", crossOut());
-  
   function addCrossOutButton(listItem) {
     let crossOutButton = '';
     crossOutButton = $("<crossOutButton></crossOutButton");
@@ -36,6 +30,14 @@ let toDoList = (function ($) {
     listItem.append(crossOutButton);
   } 
 
+
+
+  function crossOut() {
+    li.toggleClass("strike");
+  }
+
+  li.on("dblclick", crossOut());
+  
   $('#list').sortable();
 
   return {
