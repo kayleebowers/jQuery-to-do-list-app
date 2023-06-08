@@ -12,7 +12,7 @@ let toDoList = (function ($) {
 
   //add list items function
   button.click(function () {
-    let li = '';
+    let li = "";
 
     if (!formInput) {
       alert("You must write something!");
@@ -27,11 +27,11 @@ let toDoList = (function ($) {
   let deleteButton = $("<button></button>");
 
   function addCrossOutButton(listItem) {
-    let crossOutButton = '';
+    let crossOutButton = "";
     crossOutButton = $("<crossoutbutton></crossoutbutton>");
     crossOutButton.append(document.createTextNode("X"));
     listItem.append(crossOutButton);
-  } 
+  }
 
   //delete li
 
@@ -45,8 +45,7 @@ let toDoList = (function ($) {
     $(this).toggleClass("strike");
   });
 
-  //make list sortable 
+  //make list sortable
 
-  $('#list').sortable();
-
+  $("#list").sortable();
 })(jQuery);
