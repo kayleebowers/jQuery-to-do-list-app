@@ -1,4 +1,4 @@
-let newItem = (function ($) {
+let toDoList = (function ($) {
   //define variables
   let list = $("#list");
   let button = $("#button");
@@ -15,9 +15,9 @@ let newItem = (function ($) {
     if (!formInput) {
       alert("You must write something!");
     } else {
-        let li = $("<li></li>");
       let listItem = li.text(formInput).addClass("list-item");
       list.append(listItem);
+      addCrossOutButton;
     }
   });
 
@@ -27,10 +27,13 @@ let newItem = (function ($) {
 
   li.on("dblclick", crossOut());
   
-  //add crossOutButton to all li 
+  //create crossOutButton and function to append them to li 
   let crossOutButton = $("<crossOutButton></crossOutButton");
-  crossOutButton.append(document.createTextNode("X"));
-  li.append(crossOutButton);
+
+  function addCrossOutButton() {
+    crossOutButton.append(document.createTextNode("X"));
+    li.append(crossOutButton);
+  } 
 
   $('#list').sortable();
 
