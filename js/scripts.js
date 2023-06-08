@@ -1,4 +1,4 @@
-(function ($) {
+let newItem = (function ($) {
   //define variables
   let list = $("#list");
   let button = $("#button");
