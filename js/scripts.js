@@ -17,7 +17,7 @@ let toDoList = (function ($) {
     } else {
       let listItem = li.text(formInput).addClass("list-item");
       list.append(listItem);
-      addCrossOutButton;
+      addCrossOutButton();
     }
   });
 
