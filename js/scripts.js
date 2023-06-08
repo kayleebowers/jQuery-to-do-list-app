@@ -3,7 +3,14 @@
     let list = $('#list');
     let button = $('#button');
     let formInput = $('#input').val();
-    let listItem = $('<li></li>').text(formInput).addClass('list-item');
-    list.append('');
+
+    //add event listener to get input 
+    
+    //add list items when button is clicked
+    button.click(function () {
+        let listItem = $('<li></li>').text(formInput).addClass('list-item');
+        list.append(listItem);
+    })
+    
 
 })(jQuery);
