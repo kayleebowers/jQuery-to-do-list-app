@@ -28,18 +28,16 @@ let toDoList = (function ($) {
 
   function addCrossOutButton(listItem) {
     let crossOutButton = '';
-    crossOutButton = $("<crossOutButton></crossOutButton>");
+    crossOutButton = $("<crossoutbutton></crossoutbutton>");
     crossOutButton.append(document.createTextNode("X"));
     listItem.append(crossOutButton);
   } 
 
   //delete li
 
-  function deleteItem() {
-    $("li").addClass("delete");
-  }
-
-  $(".deleteButton").click(deleteItem());
+  list.on("click", "li", function (event) {
+    $(this).addClass("delete");
+  });
 
   
   function crossOut() {
