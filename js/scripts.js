@@ -1,7 +1,9 @@
 (function ($) {
+    //define variables
     let list = $('#list');
+    let button = $('#button');
     let formInput = $('#input').val();
-    
-    list.append('<li></li>');
+    let listItem = $('<li></li>').text(formInput).addClass('list-item');
+    list.append('');
 
 })(jQuery);
