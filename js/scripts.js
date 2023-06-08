@@ -12,12 +12,14 @@ let toDoList = (function ($) {
 
   //add list items function
   button.click(function () {
+    let li = '';
+
     if (!formInput) {
       alert("You must write something!");
     } else {
-      let listItem = li.text(formInput).addClass("list-item");
-      list.append(listItem);
-      addCrossOutButton();
+      let li = $("<li></li>").text(formInput).addClass("list-item");
+      list.append(li);
+      addCrossOutButton(li);
     }
   });
 
@@ -27,12 +29,11 @@ let toDoList = (function ($) {
 
   li.on("dblclick", crossOut());
   
-  //create crossOutButton and function to append them to li 
-  let crossOutButton = $("<crossOutButton></crossOutButton");
-
-  function addCrossOutButton() {
+  function addCrossOutButton(listItem) {
+    let crossOutButton = '';
+    crossOutButton = $("<crossOutButton></crossOutButton");
     crossOutButton.append(document.createTextNode("X"));
-    li.append(crossOutButton);
+    listItem.append(crossOutButton);
   } 
 
   $('#list').sortable();
