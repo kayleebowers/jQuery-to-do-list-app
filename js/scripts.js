@@ -33,10 +33,12 @@ let toDoList = (function ($) {
   } 
 
   //delete li
-  
+
   function deleteItem() {
     $('crossOutButton').addClass('delete');
   }
+
+  crossOutButton.click(deleteItem);
 
   function crossOut() {
     li.toggleClass("strike");
