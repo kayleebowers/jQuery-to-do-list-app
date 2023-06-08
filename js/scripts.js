@@ -8,12 +8,16 @@
     $('#input').change(function () {
         formInput = $('#input').val();
     })
-    
-    //add list items when button is clicked
-    button.click(function () {
+
+    //add list items function
+    function newItem() {
         let listItem = $('<li></li>').text(formInput).addClass('list-item');
+        let crossOutButton = document.createTextNode('X');
+        listItem.append(crossOutButton);
         list.append(listItem);
-    })
-    
+    }
+
+    //make delete buttons
+    // $('li').append(document.createTextNode('X'););
 
 })(jQuery);
