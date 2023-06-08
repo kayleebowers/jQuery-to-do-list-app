@@ -9,8 +9,6 @@
     formInput = $("#input").val();
   });
 
-  //create cross out button
-
   //add list items function
   button.click(function () {
     if (!formInput) {
@@ -18,9 +16,24 @@
     } else {
       let listItem = $("<li></li>").text(formInput).addClass("list-item");
       list.append(listItem);
+
+      //add crossOutButton to all li 
       let crossOutButton = $("<crossOutButton></crossOutButton");
       crossOutButton.append(document.createTextNode("X"));
       listItem.append(crossOutButton);
     }
   });
+
+  let item = $(".list-item");
+
+  function crossOut() {
+    item.toggleClass('strike');
+  }
+
+  item.on("dblclick", function () { 
+    crossOut();
+  })
+
+  $('#list').sortable();
+
 })(jQuery);
