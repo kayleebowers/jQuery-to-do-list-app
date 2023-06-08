@@ -43,12 +43,9 @@ let toDoList = (function ($) {
     $("li").addClass("delete");
   }
 
-  $("crossOutButton").click(function () {
-    $("li").addClass("delete");
-  });
-  $("li > button").addClass("cool");
+  $(".deleteButton").click(deleteItem());
 
-
+  
   function crossOut() {
     li.toggleClass("strike");
   }
