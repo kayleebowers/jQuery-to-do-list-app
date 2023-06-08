@@ -35,16 +35,15 @@ let toDoList = (function ($) {
 
   //delete li
 
-  list.on("click", "li", function (event) {
+  list.on("click", "crossoutbutton", function (event) {
     $(this).addClass("delete");
   });
 
-  
-  function crossOut() {
-    li.toggleClass("strike");
-  }
+  //cross out item
 
-  li.on("dblclick", crossOut());
+  list.on("dblclick", "li", function (event) {
+    $(this).toggleClass("strike");
+  });
 
   $('#list').sortable();
 
