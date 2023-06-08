@@ -10,13 +10,15 @@
     })
 
     //add list items function
-    function newItem() {
+    button.click(function () {
         let listItem = $('<li></li>').text(formInput).addClass('list-item');
-        let crossOutButton = document.createTextNode('X');
-        listItem.append(crossOutButton);
         list.append(listItem);
-    }
+    })
 
+    //create cross out button
+    let crossOutButton = $('button');
+    crossOutButton.append(document.createTextNode('X'));
+    listItem.append(crossOutButton);
     //make delete buttons
     // $('li').append(document.createTextNode('X'););
 
