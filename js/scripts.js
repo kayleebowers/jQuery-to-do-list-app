@@ -30,8 +30,11 @@
   //add crossOutButton to all li 
   let crossOutButton = $("<crossOutButton></crossOutButton");
   crossOutButton.append(document.createTextNode("X"));
-  listItem.append(crossOutButton);
+  li.append(crossOutButton);
 
   $('#list').sortable();
 
+  return {
+    crossOut
+  }
 })(jQuery);
