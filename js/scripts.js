@@ -3,7 +3,7 @@ let toDoList = (function ($) {
   let list = $("#list");
   let button = $("#button");
   let formInput = "";
-  let li = $("<li></li>");
+  let li = $("li");
 
   //add event listener to get input
   $("#input").change(function () {
@@ -24,21 +24,30 @@ let toDoList = (function ($) {
   });
 
   //create/append crossOutButton
+  let deleteButton = $("<button></button>");
 
   function addCrossOutButton(listItem) {
     let crossOutButton = '';
-    crossOutButton = $("<crossOutButton></crossOutButton");
+    let deleteButton = '';
+    crossOutButton = $("<crossOutButton></crossOutButton>");
+    deleteButton = $("<button></button>");
     crossOutButton.append(document.createTextNode("X"));
-    listItem.append(crossOutButton);
+    deleteButton.addClass("deleteButton");
+    deleteButton.append(crossOutButton);
+    listItem.append(deleteButton);
   } 
 
   //delete li
 
   function deleteItem() {
-    $('crossOutButton').addClass('delete');
+    $("li").addClass("delete");
   }
 
-  crossOutButton.click(deleteItem);
+  $("crossOutButton").click(function () {
+    $("li").addClass("delete");
+  });
+  $("li > button").addClass("cool");
+
 
   function crossOut() {
     li.toggleClass("strike");
@@ -48,7 +57,4 @@ let toDoList = (function ($) {
 
   $('#list').sortable();
 
-  return {
-    crossOut
-  }
 })(jQuery);
